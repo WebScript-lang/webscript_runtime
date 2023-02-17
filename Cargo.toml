@@ -1,0 +1,17 @@
+[package]
+name = "webscript_runtime"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+webscript_core = { path = "../webscript_core", features = ["debug"] }
+anyhow = "1.0.69"
+better-panic = "0.3.0"
+wasmtime = "5.0.0"
+url = "2.3.1"
+rlsf = "0.2.0"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
